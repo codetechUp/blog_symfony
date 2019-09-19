@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %} {% block title %}Les Biens{% endblock %} {% block body %}
+<div class="jumbotron text-center">
+    <h1>LES BIENS DE L'AGENCE</h1>
+</div>
+<div class="container">
+    <div class="row ">
+        {% for resultat in resultats %}
+
+        <div class="col-3 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{{ path('info',{id:resultat.id}) }}">{{ resultat.title }}</a>
+                    </h4>
+                    <div class="card-text">{{ resultat.city}}({{ resultat.postal}})</div>
+                    <div class="text-primary mt-3"><b>{{ resultat.format}} FCFA </b></div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor%}
+    </div>
+</div>
+{% endblock %}

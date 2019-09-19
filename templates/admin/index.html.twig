@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %} {% block title %}Hello AdminController!{% endblock %} {% block body %}
+<div class="container">
+    {% for message in app.flashes("success") %}
+    <div class="alert mt-4 alert-success">{{ message }}</div>
+    {% endfor %} {% for resultat in resultats%}
+    <div class="row mt-4 bg-dark ">
+        <div class="col-4 p-4 text-light">
+            <b>{{resultat.title}}</b>
+        </div>
+        <div class="col-4 p-4">
+            <a href="{{path('editer',{id:resultat.id})}} " class="btn btn-primary ">Editer</a>
+        </div>
+
+        <div class="col-4 p-4">
+            <button class="btn btn-danger " onclick="return confirm('Voulez-vous vraiment supprimer le bien')"><a class="text-light" href="{{path('delete',{id:resultat.id})}}">Supprimer</a></button>
+        </div>
+    </div>
+    {% endfor %}
+    <div>
+        <div class=" text-center pt-4">
+            <h3><b>Creation de bien</b></h3>
+            <a href="{{path('creer')}}" class="btn btn-success ">Creer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

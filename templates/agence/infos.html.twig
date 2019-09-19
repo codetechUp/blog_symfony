@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} {% block title %} {{ resultats.title}} {% endblock %} {% block body %}
+<div class="jumbotron text-center">
+    <h2>{{ resultats.title}}</h2>
+    <p>{{ resultats.description}}</p>
+    <p class="text-primary" style="font-size: 34px;"><b>{{ resultats.format}}FCFA</b></p>
+    <p>
+        <a href="#" class="btn btn-primary">Contacter l'Agence</a></p>
+
+</div>
+<div class="container">
+
+    <table class="table table-stripped">
+        <tr>
+            <td>Surface</td>
+            <td class="text-primary">{{ resultats.surface}}m2</td>
+        </tr>
+        <tr>
+            <td>Etage</td>
+            <td class="text-primary">{{ resultats.floor}}</td>
+        </tr>
+        <tr>
+            <td>Prix</td>
+            <td class="text-primary">{{ resultats.format}}FCFA</td>
+        </tr>
+        <tr>
+            <td>Salle</td>
+            <td class="text-primary">{{ resultats.rooms}}</td>
+        </tr>
+        <tr>
+            <td>Addesse</td>
+            <td class="text-primary">{{ resultats.addresse}} {{ resultats.city}}</td>
+        </tr>
+        <tr>
+            <td>Heat</td>
+            <td class="text-primary">{{ resultats.heatype}}</td>
+        </tr>
+    </table>
+
+</div>
+{% endblock %}
